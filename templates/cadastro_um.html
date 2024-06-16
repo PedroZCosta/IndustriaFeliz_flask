@@ -1,0 +1,33 @@
+{% extends 'standard.html' %}
+
+{% block head %}
+<title>Cadastro de Unidades de Medidas</title>
+{% endblock %}
+
+{% block body %}
+<section>
+    <div>
+        <p>Cadastro de Unidades de Medidas</p>
+        <form action="/cadastros_gerais_unidades_de_medidas_cadastrar" method="POST">
+            <!-- cria um campo para insercao de testo-->
+            <input type="text" name="name" id="name">
+            <br>
+            <input type="text" name="abreviation" id="abreviation">
+            <br>
+            <!-- sumbmit realiza o ato post, value e apenas o nome do botao-->
+            <input type="submit" value="Cadastrar Unidade">
+        </form>
+    </div>
+    <div>
+    {% if tasks|length < 1 %}
+    <h4>Ainda Não Existem Unidades de Medida Cadastradas</h4>
+    {% else %}
+    <table>
+        <th>Nome:</th>
+        <th>UM:</th>
+        <th>Data:</th>
+    </table>
+    {% endif %}
+    </div>
+</section>
+{% endblock %}
